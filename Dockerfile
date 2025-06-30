@@ -19,6 +19,7 @@ FROM nginx:alpine
 # COPY --from=builder /app/.vitepress/dist /usr/share/nginx/html
 COPY --from=builder /app/dist /usr/share/nginx/html
 
+RUN mkdir -p /usr/share/nginx/html/downloads
 # 7. 포트 노출
 EXPOSE 80
 
