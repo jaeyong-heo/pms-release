@@ -16,7 +16,8 @@ RUN npm run docs:build
 FROM nginx:alpine
 
 # 6. 빌드된 파일을 nginx html 폴더에 복사
-COPY --from=builder /app/.vitepress/dist /usr/share/nginx/html
+# COPY --from=builder /app/.vitepress/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # 7. 포트 노출
 EXPOSE 80
